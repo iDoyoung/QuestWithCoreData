@@ -4,34 +4,34 @@
 //
 //  Created by ido on 2021/02/05.
 //
-
+import Foundation
 import CoreData
 
 class DataManager {
     
     static let dataManager = DataManager()
     
-    init() { }
+    init() {}
     
     lazy var persistentContainer: NSPersistentContainer = {
-    
         let container = NSPersistentContainer(name: "QuestModel")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-               
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
         return container
     }()
 
+    var quests = [Quest]()
+    var tasks = [Task]()
+    
     func saveContext() {
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {
                 try context.save()
             } catch {
-              
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
@@ -51,21 +51,44 @@ class DataManager {
         }
     }
     
-//    func load() {
-//        do {
-//            dataArray = try context.fetch(Hello.fetchRequest())
-//            dataArray.forEach {
-//                print("\($0.name!): Hello \($0.country!)!")
-//            }
-//        } catch {
-//            print("Error: \(error.localizedDescription)")
-//        }
-//    }
-//    
-//    func reset() {
-//        for data in dataArray {
-//            context.delete(data)
-//        }
-//        save()
-//    }
+    func loadQueset() {
+        let request: NSFetchRequest<Quest> = Quest.fetchRequest()
+        do {
+            quests = try context.fetch(request)
+            print("Success load.")
+        } catch {
+            print("Error:\(error)")
+        }
+    }
+    
+    func loadAllTasks() {
+        let request: NSFetchRequest<Task> = Task.fetchRequest()
+        do {
+            tasks = try context.fetch(request)
+            print("Success load.")
+        } catch {
+            print("Error:\(error)")
+        }
+    }
+    
+    func delete(object: NSManagedObject) -> Bool {
+        self.context.delete(object)
+        do { try context.save()
+            return true
+        } catch {
+            return false
+        }
+    }
+
+    func loadTasks(select: Quest) {
+        let request: NSFetchRequest<Task> = Task.fetchRequest()
+        do {
+            tasks = try context.fetch(request)
+            let tasksSelected = tasks.filter { $0.parentQuset!.id == select.id }
+            tasks = tasksSelected
+        } catch {
+            print("Error: \(error)")
+        }
+    }
+    
 }

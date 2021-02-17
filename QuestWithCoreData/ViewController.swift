@@ -11,54 +11,81 @@ import CoreData
 class ViewController: UIViewController {
 
     let dataManager = DataManager.dataManager
-    var quests = [Quest]()
+    
+    var questsTilToday: [Quest] {
+        dataManager.quests.filter { $0.hasDeadLine == Date() }
+    }
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadQueset()
+        dataManager.loadQueset()
         setRightNavButton()
         tableView.delegate = self
         tableView.dataSource = self
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
     }
 
-    var epic = [Quest]()
-    var rare = [Quest]()
-    var normal = [Quest]()
-   
-    func loadQueset() {
-        let request: NSFetchRequest<Quest> = Quest.fetchRequest()
-        do {
-            quests = try dataManager.context.fetch(request)
-            let uncompleted = quests.filter { $0.isDone == false }
-            epic = uncompleted.filter { $0.priority == 1 }
-            rare = uncompleted.filter { $0.priority == 2 }
-            normal = uncompleted.filter { $0.priority == 3 }
-            print("Success load.")
-        } catch {
-            print("Error:\(error)")
-        }
+    var uncompleted: [Quest] {
+        dataManager.quests.filter { $0.isDone == false }
     }
     
+    var epic: [Quest] {
+        uncompleted.filter{ $0.priority == 1 }
+    }
+    
+    var rare: [Quest] {
+        uncompleted.filter { $0.priority == 2 }
+    }
+    
+    var common: [Quest] {
+        uncompleted.filter { $0.priority == 3 }
+    }
+   
     func setRightNavButton() {
-        let button = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(addOrEdit))
+        let button = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addOrEdit))
         navigationItem.rightBarButtonItem = button
-        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            let destinationVC = segue.destination as! DetailViewController
+            
+            if let indexPath = tableView.indexPathForSelectedRow, indexPath.section == 0 {
+                destinationVC.selectedQuest = epic[indexPath.row]
+            } else if let indexPath = tableView.indexPathForSelectedRow, indexPath.section == 1 {
+                destinationVC.selectedQuest = rare[indexPath.row]
+            } else if let indexPath = tableView.indexPathForSelectedRow, indexPath.section == 2 {
+                destinationVC.selectedQuest = common[indexPath.row]
+            } else {
+                print("?")
+            }
+        }
     }
     
     @objc func addOrEdit() {
         let storyboard = UIStoryboard(name: "Edit", bundle: nil)
-        let destinationVC = storyboard.instantiateViewController(identifier: "EditViewController")
-        present(destinationVC, animated: true, completion: nil)
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "EditViewController")
+        let navDestinationVC = UINavigationController(rootViewController: destinationVC)
+        present(navDestinationVC, animated: true, completion: nil)
     }
     
 }
 
 extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetail", sender: self)
+    }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("Set alert")
+        }
+    }
 }
 
 extension ViewController: UITableViewDataSource {
@@ -68,12 +95,14 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 1 {
+        if section == 0 {
             return epic.count
-        } else if section == 2 {
+        } else if section == 1 {
             return rare.count
+        } else if section == 2 {
+            return common.count
         } else {
-            return normal.count
+            return 0
         }
     }
     
@@ -81,13 +110,13 @@ extension ViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as? TableViewCell else {
             return UITableViewCell()
         }
-        let section = tableView.numberOfSections
-        if section == 1 {
+        let section = indexPath.section
+        if section == 0 {
             cell.questTitle.text = epic[indexPath.row].title
-        } else if section == 2 {
+        } else if section == 1 {
             cell.questTitle.text = rare[indexPath.row].title
-        } else {
-            cell.questTitle.text = normal[indexPath.row].title
+        } else if section == 2 {
+            cell.questTitle.text = common[indexPath.row].title
         }
         return cell
     }
@@ -99,6 +128,9 @@ extension ViewController: UITableViewDataSource {
 class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var questTitle: UILabel!
+    @IBOutlet weak var progress: UILabel!
+    
+    
 }
 
 class CollectionViewCell: UICollectionViewCell {

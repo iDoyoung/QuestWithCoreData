@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		50338A5D25CCF0CE0071816F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50338A5C25CCF0CE0071816F /* DataManager.swift */; };
+		50694BD125DB5B2E00AC2C1D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50694BD025DB5B2E00AC2C1D /* SceneDelegate.swift */; };
+		507EA1EC25D216F9008AA63B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507EA1EB25D216F9008AA63B /* DetailViewController.swift */; };
 		50B3014F25CBC03E0010D297 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B3014E25CBC03E0010D297 /* AppDelegate.swift */; };
-		50B3015125CBC03E0010D297 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B3015025CBC03E0010D297 /* SceneDelegate.swift */; };
 		50B3015325CBC03E0010D297 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B3015225CBC03E0010D297 /* ViewController.swift */; };
 		50B3015625CBC03E0010D297 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B3015425CBC03E0010D297 /* Main.storyboard */; };
 		50B3015825CBC0410010D297 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B3015725CBC0410010D297 /* Assets.xcassets */; };
@@ -21,9 +22,10 @@
 
 /* Begin PBXFileReference section */
 		50338A5C25CCF0CE0071816F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		50694BD025DB5B2E00AC2C1D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		507EA1EB25D216F9008AA63B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		50B3014B25CBC03E0010D297 /* QuestWithCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuestWithCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B3014E25CBC03E0010D297 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		50B3015025CBC03E0010D297 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		50B3015225CBC03E0010D297 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		50B3015525CBC03E0010D297 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50B3015725CBC0410010D297 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,16 +67,17 @@
 			isa = PBXGroup;
 			children = (
 				50B3014E25CBC03E0010D297 /* AppDelegate.swift */,
-				50B3015025CBC03E0010D297 /* SceneDelegate.swift */,
+				50694BD025DB5B2E00AC2C1D /* SceneDelegate.swift */,
 				50B3015225CBC03E0010D297 /* ViewController.swift */,
+				507EA1EB25D216F9008AA63B /* DetailViewController.swift */,
 				50B3016D25CBD08C0010D297 /* EditViewController.swift */,
+				50338A5C25CCF0CE0071816F /* DataManager.swift */,
 				50B3016325CBC0530010D297 /* QuestModel.xcdatamodeld */,
 				50B3015425CBC03E0010D297 /* Main.storyboard */,
 				50B3015725CBC0410010D297 /* Assets.xcassets */,
 				50B3015925CBC0410010D297 /* LaunchScreen.storyboard */,
 				50B3015C25CBC0410010D297 /* Info.plist */,
 				50B3016A25CBD06B0010D297 /* Edit.storyboard */,
-				50338A5C25CCF0CE0071816F /* DataManager.swift */,
 			);
 			path = QuestWithCoreData;
 			sourceTree = "<group>";
@@ -151,11 +154,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				50B3016E25CBD08C0010D297 /* EditViewController.swift in Sources */,
+				50694BD125DB5B2E00AC2C1D /* SceneDelegate.swift in Sources */,
 				50338A5D25CCF0CE0071816F /* DataManager.swift in Sources */,
 				50B3015325CBC03E0010D297 /* ViewController.swift in Sources */,
+				507EA1EC25D216F9008AA63B /* DetailViewController.swift in Sources */,
 				50B3014F25CBC03E0010D297 /* AppDelegate.swift in Sources */,
 				50B3016525CBC0530010D297 /* QuestModel.xcdatamodeld in Sources */,
-				50B3015125CBC03E0010D297 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +308,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = QuestWithCoreData/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -322,6 +327,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = QuestWithCoreData/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

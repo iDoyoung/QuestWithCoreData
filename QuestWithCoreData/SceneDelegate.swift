@@ -2,11 +2,12 @@
 //  SceneDelegate.swift
 //  QuestWithCoreData
 //
-//  Created by ido on 2021/02/04.
+//  Created by ido on 2021/02/16.
 //
 
 import UIKit
 
+@available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -49,4 +50,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
-
