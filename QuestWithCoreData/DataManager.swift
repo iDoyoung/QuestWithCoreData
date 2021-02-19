@@ -91,4 +91,11 @@ class DataManager {
         }
     }
     
+    func dateToString(date: Date) -> String {
+        let dateFormater = DateFormatter()
+        dateFormater.dateStyle = .medium
+        dateFormater.timeStyle = .none
+        let dateString = dateFormater.string(from: date)
+        return dateString
+    }
 }

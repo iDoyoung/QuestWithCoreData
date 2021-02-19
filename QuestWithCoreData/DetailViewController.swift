@@ -56,7 +56,7 @@ class DetailViewController: UIViewController {
         if selectedQuest?.hasDeadLine != nil {
             deadLineEmoji.isHidden = false
 
-            if selectedQuest!.hasDeadLine == Date() {
+            if selectedQuest!.hasDeadLine == dataManager.dateToString(date: Date()) {
                 alertDeadLine.isHidden = false
             }
         } else {

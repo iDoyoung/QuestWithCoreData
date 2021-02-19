@@ -9,7 +9,8 @@ import UIKit
 import CoreData
 
 class EditViewController: UIViewController {
-    // data에 완료날짜 추가
+    
+    //TODO : When dismiss data send.
     let dataManager = DataManager.dataManager
     
     var tasks = [Task]()
@@ -44,7 +45,7 @@ class EditViewController: UIViewController {
     @IBAction func setDeadLine(_ sender: UISwitch) {
         if sender.isOn {
             datePicker.isEnabled = true
-            newQuest.hasDeadLine = datePicker.date
+            newQuest.hasDeadLine = dataManager.dateToString(date: datePicker.date)
             } else {
                 datePicker.isEnabled = false
                 newQuest.hasDeadLine = nil
@@ -95,6 +96,10 @@ class EditViewController: UIViewController {
     }
     
     @objc func saveQuest() {
+        guard !tasks.isEmpty else {
+            print("task.empty")
+            return
+        }
         newQuest.id = setID(array: quests)
         newQuest.title = tittleText.text
         newQuest.isDone = false
@@ -113,7 +118,8 @@ class EditViewController: UIViewController {
     }
     
     @objc func changeDate() {
-        newQuest.hasDeadLine = datePicker.date
+        let choosedDate = dataManager.dateToString(date: datePicker.date)
+        newQuest.hasDeadLine = choosedDate
     }
     
 }

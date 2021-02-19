@@ -74,10 +74,10 @@
 				50338A5C25CCF0CE0071816F /* DataManager.swift */,
 				50B3016325CBC0530010D297 /* QuestModel.xcdatamodeld */,
 				50B3015425CBC03E0010D297 /* Main.storyboard */,
+				50B3016A25CBD06B0010D297 /* Edit.storyboard */,
 				50B3015725CBC0410010D297 /* Assets.xcassets */,
 				50B3015925CBC0410010D297 /* LaunchScreen.storyboard */,
 				50B3015C25CBC0410010D297 /* Info.plist */,
-				50B3016A25CBD06B0010D297 /* Edit.storyboard */,
 			);
 			path = QuestWithCoreData;
 			sourceTree = "<group>";
