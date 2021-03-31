@@ -10,7 +10,6 @@ import CoreData
 import UserNotifications
 
 class ViewController: UIViewController {
-    
     @IBOutlet weak var searchBarBG: UIView!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var footerView: UIView!
@@ -22,7 +21,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setRightNavButton()
         dataManager.loadQueset()
         tableView.dataSource = self
