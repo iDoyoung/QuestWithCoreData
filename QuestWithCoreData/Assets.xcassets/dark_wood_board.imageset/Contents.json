@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "dark_wood_board.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

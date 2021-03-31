@@ -24,7 +24,18 @@ class DataManager {
     }()
 
     var quests = [Quest]()
-    var tasks = [Task]()
+    var tasks = [Task]() {
+        didSet {
+            tasks.sort {
+                $0.id < $1.id
+            }
+        }
+    }
+    
+    
+    var context: NSManagedObjectContext {
+        self.persistentContainer.viewContext
+    }
     
     func saveContext() {
         let context = persistentContainer.viewContext
@@ -38,10 +49,6 @@ class DataManager {
         }
     }
 
-    var context: NSManagedObjectContext {
-        self.persistentContainer.viewContext
-    }
-    
     func save() {
         do {
             try context.save()
@@ -71,8 +78,10 @@ class DataManager {
         }
     }
     
+    @discardableResult
     func delete(object: NSManagedObject) -> Bool {
         self.context.delete(object)
+        print("Succes delete")
         do { try context.save()
             return true
         } catch {
@@ -92,10 +101,16 @@ class DataManager {
     }
     
     func dateToString(date: Date) -> String {
-        let dateFormater = DateFormatter()
-        dateFormater.dateStyle = .medium
-        dateFormater.timeStyle = .none
-        let dateString = dateFormater.string(from: date)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        let dateString = dateFormatter.string(from: date)
         return dateString
+    }
+    
+    func stringToDate(dateString: String) -> Date {
+        let dateFormatter = DateFormatter()
+        let date = dateFormatter.date(from: dateString)
+        return date!
     }
 }
