@@ -10,9 +10,7 @@ import Foundation
 class Detail {
     static let detail = Detail()
     
-    init() {
-     
-    }
+    init() {    }
     
     var selectedQuest: Quest? {
         didSet {

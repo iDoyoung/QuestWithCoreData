@@ -16,8 +16,15 @@
 		504667DD25FB3336003FF545 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 504667DC25FB3336003FF545 /* GoogleService-Info.plist */; };
 		50694BD125DB5B2E00AC2C1D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50694BD025DB5B2E00AC2C1D /* SceneDelegate.swift */; };
 		507EA1EC25D216F9008AA63B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507EA1EB25D216F9008AA63B /* DetailViewController.swift */; };
+		5084053026180C99006A5492 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5084052F26180C99006A5492 /* MainTableViewCell.swift */; };
+		5084053426180E9E006A5492 /* MainPinnedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5084053326180E9E006A5492 /* MainPinnedCell.swift */; };
+		5084053726180F0F006A5492 /* Main + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5084053626180F0F006A5492 /* Main + Extension.swift */; };
+		5084053A2618113F006A5492 /* History + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508405392618113F006A5492 /* History + Extension.swift */; };
+		5084053D2618133E006A5492 /* CompletedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5084053C2618133E006A5492 /* CompletedCell.swift */; };
+		50840541261813D6006A5492 /* Detail + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50840540261813D6006A5492 /* Detail + Extension.swift */; };
+		508405452618159D006A5492 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508405442618159D006A5492 /* TaskListCell.swift */; };
 		50B3014F25CBC03E0010D297 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B3014E25CBC03E0010D297 /* AppDelegate.swift */; };
-		50B3015325CBC03E0010D297 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B3015225CBC03E0010D297 /* ViewController.swift */; };
+		50B3015325CBC03E0010D297 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B3015225CBC03E0010D297 /* MainViewController.swift */; };
 		50B3015625CBC03E0010D297 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B3015425CBC03E0010D297 /* Main.storyboard */; };
 		50B3015825CBC0410010D297 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B3015725CBC0410010D297 /* Assets.xcassets */; };
 		50B3015B25CBC0410010D297 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B3015925CBC0410010D297 /* LaunchScreen.storyboard */; };
@@ -38,9 +45,16 @@
 		504667DC25FB3336003FF545 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		50694BD025DB5B2E00AC2C1D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		507EA1EB25D216F9008AA63B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5084052F26180C99006A5492 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		5084053326180E9E006A5492 /* MainPinnedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPinnedCell.swift; sourceTree = "<group>"; };
+		5084053626180F0F006A5492 /* Main + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main + Extension.swift"; sourceTree = "<group>"; };
+		508405392618113F006A5492 /* History + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History + Extension.swift"; sourceTree = "<group>"; };
+		5084053C2618133E006A5492 /* CompletedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedCell.swift; sourceTree = "<group>"; };
+		50840540261813D6006A5492 /* Detail + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detail + Extension.swift"; sourceTree = "<group>"; };
+		508405442618159D006A5492 /* TaskListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListCell.swift; sourceTree = "<group>"; };
 		50B3014B25CBC03E0010D297 /* QuestWithCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuestWithCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B3014E25CBC03E0010D297 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		50B3015225CBC03E0010D297 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		50B3015225CBC03E0010D297 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		50B3015525CBC03E0010D297 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50B3015725CBC0410010D297 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50B3015A25CBC0410010D297 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -77,8 +91,11 @@
 		50131BC62610B35E008CDE6A /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				50B3015225CBC03E0010D297 /* ViewController.swift */,
 				50131BCC2610B443008CDE6A /* Main.swift */,
+				50B3015225CBC03E0010D297 /* MainViewController.swift */,
+				5084052F26180C99006A5492 /* MainTableViewCell.swift */,
+				5084053326180E9E006A5492 /* MainPinnedCell.swift */,
+				5084053626180F0F006A5492 /* Main + Extension.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -86,8 +103,10 @@
 		50131BC92610B380008CDE6A /* History */ = {
 			isa = PBXGroup;
 			children = (
-				50CF762625DFA4DF00E8C910 /* HistoryViewController.swift */,
 				50131BD02610B483008CDE6A /* History.swift */,
+				50CF762625DFA4DF00E8C910 /* HistoryViewController.swift */,
+				5084053C2618133E006A5492 /* CompletedCell.swift */,
+				508405392618113F006A5492 /* History + Extension.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -95,9 +114,11 @@
 		50131BCA2610B39E008CDE6A /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				50CF764B25E0FEF700E8C910 /* MemoViewController.swift */,
 				50131BD62611FAA5008CDE6A /* Detail.swift */,
 				507EA1EB25D216F9008AA63B /* DetailViewController.swift */,
+				50840540261813D6006A5492 /* Detail + Extension.swift */,
+				508405442618159D006A5492 /* TaskListCell.swift */,
+				50CF764B25E0FEF700E8C910 /* MemoViewController.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -140,12 +161,12 @@
 				50131BCA2610B39E008CDE6A /* Detail */,
 				50131BCB2610B3C5008CDE6A /* Add */,
 				50338A5C25CCF0CE0071816F /* DataManager.swift */,
+				50E24CEE25EB48D1007AD67B /* Quest + delegate.swift */,
 				50B3016325CBC0530010D297 /* QuestModel.xcdatamodeld */,
 				504667DC25FB3336003FF545 /* GoogleService-Info.plist */,
 				50B3015725CBC0410010D297 /* Assets.xcassets */,
 				50B3015925CBC0410010D297 /* LaunchScreen.storyboard */,
 				50B3015C25CBC0410010D297 /* Info.plist */,
-				50E24CEE25EB48D1007AD67B /* Quest + delegate.swift */,
 			);
 			path = QuestWithCoreData;
 			sourceTree = "<group>";
@@ -276,17 +297,24 @@
 			files = (
 				50CF764C25E0FEF700E8C910 /* MemoViewController.swift in Sources */,
 				50B3016E25CBD08C0010D297 /* AddQuestViewController.swift in Sources */,
+				5084053426180E9E006A5492 /* MainPinnedCell.swift in Sources */,
 				50694BD125DB5B2E00AC2C1D /* SceneDelegate.swift in Sources */,
+				5084053D2618133E006A5492 /* CompletedCell.swift in Sources */,
 				50338A5D25CCF0CE0071816F /* DataManager.swift in Sources */,
-				50B3015325CBC03E0010D297 /* ViewController.swift in Sources */,
+				5084053026180C99006A5492 /* MainTableViewCell.swift in Sources */,
+				508405452618159D006A5492 /* TaskListCell.swift in Sources */,
+				50B3015325CBC03E0010D297 /* MainViewController.swift in Sources */,
 				507EA1EC25D216F9008AA63B /* DetailViewController.swift in Sources */,
 				50B3014F25CBC03E0010D297 /* AppDelegate.swift in Sources */,
 				50131BD12610B483008CDE6A /* History.swift in Sources */,
+				5084053A2618113F006A5492 /* History + Extension.swift in Sources */,
 				50131BD72611FAA5008CDE6A /* Detail.swift in Sources */,
 				50B3016525CBC0530010D297 /* QuestModel.xcdatamodeld in Sources */,
 				50131BD42610B4A4008CDE6A /* AddViewModel.swift in Sources */,
 				50CF762725DFA4DF00E8C910 /* HistoryViewController.swift in Sources */,
 				50E24CEF25EB48D1007AD67B /* Quest + delegate.swift in Sources */,
+				5084053726180F0F006A5492 /* Main + Extension.swift in Sources */,
+				50840541261813D6006A5492 /* Detail + Extension.swift in Sources */,
 				50131BCD2610B443008CDE6A /* Main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -36,6 +36,7 @@ class DetailViewController: UIViewController {
         didSet {
             progressBar.setProgress(Float(progressValue * 0.01), animated: true)
             if progressBar.progress == 1 {
+                
                 viewModel.selectedQuest?.isDone = true
 
                 let animation = CABasicAnimation(keyPath: "transform.scale")
@@ -148,69 +149,8 @@ class DetailViewController: UIViewController {
         sender.isSelected = !sender.isSelected
         let button = sender.tag
         viewModel.done(sender: button)
+        progressValue = viewModel.progressValue
     }
     
 }
 
-extension DetailViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        dataManager.tasks.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellOfTasks", for: indexPath) as? CellOfTasks else {
-            return UITableViewCell()
-        }
-        
-        cell.selectionStyle = .none
-        
-        cell.updateCell(index: indexPath.row)
-        cell.doneButton.tag = indexPath.row
-        cell.doneButton.addTarget(self, action: #selector(doneTask(sender:)), for: .touchUpInside)
-        
-        if viewModel.selectedQuest?.isDone == true {
-            cell.doneButton.removeTarget(nil, action: nil, for: .allEvents)
-        }
-        return cell
-    }
-}
-
-class CellOfTasks: UITableViewCell {
-    let dataManager = DataManager.dataManager
-    @IBOutlet weak var doneButton: UIButton!
-    @IBOutlet weak var checkBox: UIView!
-    @IBOutlet weak var taskTitle: CBAutoScrollLabel!
-    
-    func updateCell(index: Int) {
-        checkBox.layer.borderWidth = 2
-        if #available(iOS 13.0, *) {
-            checkBox.layer.borderColor = UIColor.label.cgColor
-        } else {
-            checkBox.layer.borderColor = UIColor.black.cgColor
-        }
-        
-        let task = dataManager.tasks[index]
-        taskTitle.text = task.content
-        if #available(iOS 13.0, *) {
-            taskTitle.textColor = .label
-        } else {
-            taskTitle.textColor = .black
-        }
-        taskTitle.pauseInterval = 3.5
-        taskTitle.scrollSpeed = 30
-        taskTitle.textAlignment = .left
-        taskTitle.labelSpacing = 35
-        taskTitle.fadeLength = 12
-
-        
-        if task.isDone {
-            doneButton.isSelected = true
-        } else {
-            doneButton.isSelected = false
-        }
-        
-    }
-    
-}
