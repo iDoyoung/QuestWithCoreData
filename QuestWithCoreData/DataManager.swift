@@ -24,6 +24,7 @@ class DataManager {
     }()
 
     var quests = [Quest]()
+    
     var tasks = [Task]() {
         didSet {
             tasks.sort {

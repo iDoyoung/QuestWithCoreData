@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Detail {
+struct Detail {
     static let detail = Detail()
     
     init() {    }
@@ -22,15 +22,22 @@ class Detail {
     
     var progressValue: Float = 0
     
+    var tasks: [Task] {
+        dataManager.tasks
+    }
+    
     var deadlineDate: String {
         dataManager.dateToString(date: (selectedQuest?.hasDeadLine!)!)
     }
     
+    func loadQuests() {
+        dataManager.loadQueset()
+    }
     func loadTasks() {
         dataManager.loadTasks(select: selectedQuest!)
     }
     
-    func getPercentage() {
+    mutating func getPercentage() {
         let completedTasks = dataManager.tasks.filter {
             $0.isDone
         }
@@ -41,9 +48,13 @@ class Detail {
         progressValue = Float(result)
     }
    
-    func done(sender: Int) {
+    mutating func done(sender: Int) {
         dataManager.tasks[sender].isDone = !dataManager.tasks[sender].isDone
         getPercentage()
         dataManager.save()
+    }
+    
+    var today: String {
+        dataManager.dateToString(date: Date())
     }
 }

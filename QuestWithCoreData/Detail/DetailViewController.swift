@@ -7,16 +7,14 @@
 
 import UIKit
 import CoreData
-import AutoScrollLabel
+import MarqueeLabel
 
 class DetailViewController: UIViewController {
-    //TODO : if isdone memo set not work
+    //TODO : if isdone memo set not working
     
-    // selected
-    let dataManager = DataManager.dataManager
-    let viewModel = Detail.detail
+    var viewModel = Detail.detail
     
-    @IBOutlet weak var questTitle: CBAutoScrollLabel!
+    @IBOutlet weak var questTitle: MarqueeLabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var priorityEmoji: UIImageView!
     @IBOutlet weak var deadLineEmoji: UIImageView!
@@ -92,18 +90,21 @@ class DetailViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         navigationController?.isNavigationBarHidden = false
-        dataManager.loadQueset()
+        viewModel.loadQuests()
         delegate.updateQuestData()
     }
     
     func updateUI() {
         questTitle.text = viewModel.selectedQuest?.title
         questTitle.font = UIFont.systemFont(ofSize: 75, weight: .thin)
-        questTitle.scrollSpeed = 45
-        questTitle.pauseInterval = 1.5
-        questTitle.textAlignment = .center
-        questTitle.fadeLength = 36
-        questTitle.labelSpacing = 120
+        questTitle.speed = .duration(20)
+        questTitle.fadeLength = 35
+        
+//        questTitle.scrollSpeed = 45
+//        questTitle.pauseInterval = 1.5
+ //       questTitle.textAlignment = .center
+//        questTitle.fadeLength = 36
+//        questTitle.labelSpacing = 120
         
         switch viewModel.selectedQuest?.priority {
         case 1:
@@ -132,7 +133,7 @@ class DetailViewController: UIViewController {
             
             deadLineEmoji.isHidden = false
             deadLine.isHidden = false
-            if deadline == dataManager.dateToString(date: Date()) {
+            if deadline == viewModel.today {
                 alertDeadLine.isHidden = false
                 deadLine.textColor = UIColor(named: "Tint")
             }

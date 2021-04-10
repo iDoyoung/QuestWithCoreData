@@ -8,6 +8,7 @@
 import Foundation
 
 struct Main {
+    
     let dataManager = DataManager.dataManager
     
     static let main = Main()
@@ -21,6 +22,7 @@ struct Main {
     func saveData() {
         dataManager.save()
     }
+    
     var uncompleted: [Quest] {
         dataManager.quests.filter { $0.isDone == false }
     }

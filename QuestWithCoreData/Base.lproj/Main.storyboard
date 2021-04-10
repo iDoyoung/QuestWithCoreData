@@ -439,7 +439,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="366" height="44.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UkF-MZ-ro4" customClass="CBAutoScrollLabel">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UkF-MZ-ro4" customClass="MarqueeLabel" customModule="MarqueeLabel">
                                                             <rect key="frame" x="66" y="5.5" width="292" height="34"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         </view>
@@ -502,7 +502,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dty-Sn-zW3" userLabel="TitleView" customClass="CBAutoScrollLabel">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dty-Sn-zW3" userLabel="TitleView" customClass="MarqueeLabel" customModule="MarqueeLabel">
                                 <rect key="frame" x="20" y="44" width="374" height="124"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -857,14 +857,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" id="lAv-DJ-n6W" customClass="TasksTableViewCell" customModule="QuestWithCoreData" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="374" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lAv-DJ-n6W" id="xcN-mT-jFt">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znB-hl-deW">
-                                                    <rect key="frame" x="28" y="11" width="42" height="21.5"/>
+                                                    <rect key="frame" x="28" y="11" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1018,6 +1018,10 @@
             <point key="canvasLocation" x="1673.913043478261" y="114.50892857142857"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="UkF-MZ-ro4"/>
+        <designable name="dty-Sn-zW3"/>
+    </designables>
     <resources>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="clock.fill" catalog="system" width="128" height="121"/>

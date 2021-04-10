@@ -7,29 +7,6 @@
 
 import UIKit
 
-extension MainViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        showDetail(select: selectedQuests[indexPath.row])
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            
-            let alert = UIAlertController(title: "Give up", message: "You did not complete quest. \nAre you going to give up?", preferredStyle: .alert)
-            let deleteAction = UIAlertAction(title: "Give up", style: .destructive) { (_) in
-                let quest = self.selectedQuests[indexPath.row]
-                quest.isDone = true
-                self.viewModel.saveData()
-                self.selectedQuests = self.viewModel.uncompleted
-            }
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            alert.addAction(cancelAction)
-            alert.addAction(deleteAction)
-            present(alert, animated: true, completion: nil)
-        }
-    }
-}
-
 extension MainViewController: UITableViewDataSource {
         
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -57,6 +34,31 @@ extension MainViewController: UITableViewDataSource {
         return cell
     }
 }
+
+extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showDetail(select: selectedQuests[indexPath.row])
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            let alert = UIAlertController(title: "Give up", message: "You did not complete quest. \nAre you going to give up?", preferredStyle: .alert)
+            let deleteAction = UIAlertAction(title: "Give up", style: .destructive) { (_) in
+                let quest = self.selectedQuests[indexPath.row]
+                quest.isDone = true
+                self.viewModel.saveData()
+                self.selectedQuests = self.viewModel.uncompleted
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alert.addAction(cancelAction)
+            alert.addAction(deleteAction)
+            present(alert, animated: true, completion: nil)
+        }
+    }
+}
+
+
 
 extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

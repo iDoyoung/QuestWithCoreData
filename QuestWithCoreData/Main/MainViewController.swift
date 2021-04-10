@@ -18,10 +18,15 @@ class MainViewController: UIViewController {
     @IBOutlet var showButtonsBG: [UIView]!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var collectionViewBottomLine: NSLayoutConstraint!
     
     var viewModel = Main.main
     
+    var selectedQuests: [Quest] = [] {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
+    // view will appear 마다 selectedQuest 값 설정해야함...
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -126,11 +131,8 @@ class MainViewController: UIViewController {
         }
     }
     
-    
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        viewModel.loadData()
         selectedQuests = viewModel.uncompleted
         seletedTitle = "All \(selectedQuests.count)"
         for button in showButtons {
@@ -141,12 +143,7 @@ class MainViewController: UIViewController {
 
     var seletedTitle = ""
     
-    var selectedQuests: [Quest] = [] {
-        didSet {
-            self.tableView.reloadData()
-        }
-    }
-    
+   
     func setRightNavButton() {
         if #available(iOS 13.0, *) {
             let button = UIBarButtonItem(image: UIImage(systemName: "ellipsis.circle"), style: .plain, target: self, action: #selector(menuSheet))
@@ -247,4 +244,5 @@ class MainViewController: UIViewController {
         viewModel.saveData()
         collectionView.reloadData()
     }
+    
 }

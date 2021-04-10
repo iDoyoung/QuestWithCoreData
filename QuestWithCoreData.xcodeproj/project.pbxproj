@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		458D9C80EA26C29B5F4ED8AC /* Pods_QuestWithCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9496DD0D464BE2EC831BD720 /* Pods_QuestWithCoreData.framework */; };
+		50092FA1261972C600AEF26F /* AddPage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50092FA0261972C600AEF26F /* AddPage + Extension.swift */; };
 		50131BCD2610B443008CDE6A /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50131BCC2610B443008CDE6A /* Main.swift */; };
 		50131BD12610B483008CDE6A /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50131BD02610B483008CDE6A /* History.swift */; };
 		50131BD42610B4A4008CDE6A /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50131BD32610B4A4008CDE6A /* AddViewModel.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		036C95BB718D3A2CE863D3B0 /* Pods-QuestWithCoreData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuestWithCoreData.debug.xcconfig"; path = "Target Support Files/Pods-QuestWithCoreData/Pods-QuestWithCoreData.debug.xcconfig"; sourceTree = "<group>"; };
+		50092FA0261972C600AEF26F /* AddPage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddPage + Extension.swift"; sourceTree = "<group>"; };
 		50131BCC2610B443008CDE6A /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		50131BD02610B483008CDE6A /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		50131BD32610B4A4008CDE6A /* AddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewModel.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			children = (
 				50B3016D25CBD08C0010D297 /* AddQuestViewController.swift */,
 				50131BD32610B4A4008CDE6A /* AddViewModel.swift */,
+				50092FA0261972C600AEF26F /* AddPage + Extension.swift */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -209,7 +212,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1230;
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 1240;
 				TargetAttributes = {
 					50B3014A25CBC03E0010D297 = {
 						CreatedOnToolsVersion = 12.3;
@@ -315,6 +318,7 @@
 				50E24CEF25EB48D1007AD67B /* Quest + delegate.swift in Sources */,
 				5084053726180F0F006A5492 /* Main + Extension.swift in Sources */,
 				50840541261813D6006A5492 /* Detail + Extension.swift in Sources */,
+				50092FA1261972C600AEF26F /* AddPage + Extension.swift in Sources */,
 				50131BCD2610B443008CDE6A /* Main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,7 +396,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -447,7 +451,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -466,7 +470,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3XVAQ6DRC4;
 				INFOPLIST_FILE = QuestWithCoreData/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -487,7 +491,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3XVAQ6DRC4;
 				INFOPLIST_FILE = QuestWithCoreData/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

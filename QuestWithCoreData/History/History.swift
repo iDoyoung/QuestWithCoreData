@@ -7,7 +7,7 @@
 
 import Foundation
 
-class History {
+struct History {
     
     static let shared = History()
     
